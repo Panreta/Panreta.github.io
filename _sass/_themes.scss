@@ -6,38 +6,33 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #{v.$white-color};
-  --global-code-bg-color: #{v.$code-bg-color-light};
-  --global-text-color: #{v.$black-color};
-  --global-text-color-light: #{v.$grey-color};
-  --global-theme-color: #{v.$purple-color};
-  --global-hover-color: #{v.$purple-color};
-  --global-hover-text-color: #{v.$white-color};
-  --global-footer-bg-color: #{v.$grey-color-dark};
-  --global-footer-text-color: #{v.$grey-color-light};
-  --global-footer-link-color: #{v.$white-color};
-  --global-distill-app-color: #{v.$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
-  --global-card-bg-color: #{v.$white-color};
-  --global-highlight-color: #{v.$red-color-dark};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel(v.$black-color, "red", v.$space: rgb)},
-    #{color.channel(v.$black-color, "green", v.$space: rgb)},
-    #{color.channel(v.$black-color, "blue", v.$space: rgb)},
-    0.4
-  );
-  --global-back-to-top-text-color: #{v.$white-color};
-  --global-newsletter-bg-color: #{v.$white-color};
-  --global-newsletter-text-color: #{v.$black-color};
+  --global-bg-color: #fffff0;                /* ivory background */
+  --global-code-bg-color: #fdf6e3;           /* warm cream for code blocks */
+  --global-text-color: #2c2c2c;              /* soft dark for readability */
+  --global-text-color-light: #7a7a6e;        /* muted warm grey */
+  --global-theme-color: #b8860b;             /* dark goldenrod — main accent */
+  --global-hover-color: #996f0a;             /* deeper gold on hover */
+  --global-hover-text-color: #fffff0;        /* ivory text on gold hover */
+  --global-footer-bg-color: #3b3326;         /* warm dark brown footer */
+  --global-footer-text-color: #e8dfc8;       /* soft ivory footer text */
+  --global-footer-link-color: #f0d080;       /* light gold footer links */
+  --global-distill-app-color: #7a7a6e;
+  --global-divider-color: rgba(184, 134, 11, 0.2); /* subtle gold divider */
+  --global-card-bg-color: #fdfdf5;           /* slightly off-white cards */
+  --global-highlight-color: #b8860b;         /* gold highlight */
+  --global-back-to-top-bg-color: rgba(184, 134, 11, 0.4);
+  --global-back-to-top-text-color: #fffff0;
+  --global-newsletter-bg-color: #fdfdf5;
+  --global-newsletter-text-color: #2c2c2c;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
   --global-tip-block-text: #215d42;
   --global-tip-block-title: #359469;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #fff8d8;
-  --global-warning-block-text: #6b5900;
-  --global-warning-block-title: #b29400;
+  --global-warning-block: #b8860b;
+  --global-warning-block-bg: #fdf6d8;
+  --global-warning-block-text: #5a4200;
+  --global-warning-block-title: #996f0a;
   --global-danger-block: #c00;
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
@@ -80,8 +75,8 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{v.$code-bg-color-dark};
   --global-text-color: #{v.$grey-color-light};
   --global-text-color-light: #{v.$grey-color};
-  --global-theme-color: #{v.$cyan-color};
-  --global-hover-color: #{v.$cyan-color};
+  --global-theme-color: #f0c040;             /* brighter gold for dark mode */
+  --global-hover-color: #f5d060;
   --global-hover-text-color: #{v.$white-color};
   --global-footer-bg-color: #{v.$grey-color-light};
   --global-footer-text-color: #{v.$grey-color-dark};
@@ -103,8 +98,8 @@ html[data-theme="dark"] {
   --global-tip-block-bg: #215d42;
   --global-tip-block-text: #beffe2;
   --global-tip-block-title: #e2f5ec;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #6b5900;
+  --global-warning-block: #f0c040;
+  --global-warning-block-bg: #5a4200;
   --global-warning-block-text: #fff2af;
   --global-warning-block-title: #fff8d8;
   --global-danger-block: #c00;
@@ -183,20 +178,18 @@ html[data-theme-setting="light"] {
   font: var(--fa-font);
 }
 
-/* Left half: MOON */
 .fa-half-sun-moon::before {
   content: "\f111";
   color: var(--global-text-color);
   clip-path: polygon(0 0, calc(50% - 0.5px) 0, calc(50% - 0.5px) 100%, 0 100%);
 }
 
-/* Right half: SUN */
 .fa-half-sun-moon::after {
   content: "\f185";
   color: var(--global-text-color);
   clip-path: polygon(calc(50% + 0.5px) 0, 100% 0, 100% 100%, calc(50% + 0.5px) 100%);
-  right: -1.5px; /* slight overflow to avoid right-edge clipping */
-  transform: translateX(-1px); /* visually re-center the sun half */
+  right: -1.5px;
+  transform: translateX(-1px);
 }
 
 #light-toggle:hover .fa-half-sun-moon::before {
