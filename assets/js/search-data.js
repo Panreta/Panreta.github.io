@@ -76,11 +76,11 @@ ninja.data = [{
         
           title: "a post with plotly.js",
         
-        description: "this is what included plotly.js code could look like",
+        description: "Trial for uploading PDF onto Blog.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/plotly/";
+            window.location.href = "/blog/2026/EL_equation/";
           
         },
       },{id: "post-understanding-grpo-from-numerical-optimization",
