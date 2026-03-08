@@ -87,11 +87,11 @@ ninja.data = [{
         
           title: "Understanding GRPO from numerical optimization",
         
-        description: "this is what included image galleries could look like",
+        description: "This is the pdf I used for illustrating what is GRPO from numerical optimization view.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/photo-gallery/";
+            window.location.href = "/blog/2026/GRPO/";
           
         },
       },{id: "post-a-post-with-tabs",
