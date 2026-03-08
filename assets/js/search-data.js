@@ -83,15 +83,15 @@ ninja.data = [{
             window.location.href = "/blog/2026/plotly/";
           
         },
-      },{id: "post-a-post-with-image-galleries",
+      },{id: "post-understanding-grpo-from-numerical-optimization",
         
-          title: "a post with image galleries",
+          title: "Understanding GRPO from numerical optimization",
         
         description: "this is what included image galleries could look like",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/photo-gallery/";
+            window.location.href = "/blog/2026/photo-gallery/";
           
         },
       },{id: "post-a-post-with-tabs",
