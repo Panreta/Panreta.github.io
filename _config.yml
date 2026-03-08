@@ -351,7 +351,7 @@ enable_masonry: true
 enable_math: true
 enable_tooltips: false
 enable_darkmode: false
-enable_navbar_social: true  # shows your social links in navbar
+enable_navbar_social: false  # shows your social links in navbar
 enable_project_categories: true
 enable_medium_zoom: true
 enable_progressbar: true
