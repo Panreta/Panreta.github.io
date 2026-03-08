@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Motto</a>. Two men look out through the same bars: One sees the mud and one the stars.
 
 profile:
   align: right
