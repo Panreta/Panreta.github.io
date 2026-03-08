@@ -8,7 +8,7 @@ profile:
   image: sunset.png
   image_circular: false # crops the image to make it circular
   more_info: >
-  <p>Seattle, WA &nbsp;|&nbsp; Looking for jobs</p>
+    <p>Seattle, WA &nbsp;|&nbsp; Looking for jobs</p>
     <p>Open to relocate and remote</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
