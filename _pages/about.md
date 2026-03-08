@@ -2,8 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Motto</a>. Two men look out through the same bars: One sees the mud and one the stars.
-
+subtitle: "<a href='#'>Motto</a>. Two men look out through the same bars: One sees the mud and one the stars."
 profile:
   align: right
   image: sunset.png
