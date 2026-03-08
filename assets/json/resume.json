@@ -1,179 +1,135 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Tingyu Zhang",
+    "label": "Master's Student in Computer Science | ML Research & Engineering",
     "image": "",
-    "email": "einstein@example.com",
-    "phone": "(912) 123-4567",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "tingyu.z@northeastern.edu",
+    "phone": "206-741-8937",
+    "summary": "Master's student in Computer Science at Northeastern University Seattle (4.0 GPA) with a background in Applied Mathematics. Published researcher at ICLR 2026, with hands-on experience in ML systems, LLM agents, and production engineering.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "address": "",
+      "postalCode": "",
+      "city": "Seattle",
       "countryCode": "US",
-      "region": "California"
+      "region": "Washington"
     },
     "profiles": []
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Princeton University, NJ",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity", "Description 2."]
+      "name": "Southern University of Science and Technology",
+      "position": "Research Assistant",
+      "location": "Shenzhen, Guangdong",
+      "startDate": "2025-01-01",
+      "endDate": "2025-09-01",
+      "summary": "",
+      "highlights": [
+        "Designed and trained a continual learning Multi-Armed Bandit (MAB) model with parallel optimization, formulating a preference-theoretic reward function analogous to RLHF feedback modeling; implemented training loop in PyTorch and TensorFlow with vectorized batch updates to improve convergence efficiency.",
+        "Modeled the influence maximization problem as an online combinatorial MAB over a stochastic graph."
+      ]
     },
     {
-      "name": "California Institute of Technology",
-      "position": "Visiting Professor",
-      "location": "Pasadena, California, US",
-      "startDate": "1933-01-01",
-      "endDate": "1933-01-01",
+      "name": "HAOCHENG TECH HOLDING",
+      "position": "Machine Learning Engineering Intern",
+      "location": "Shenzhen, Guangdong",
+      "startDate": "2022-07-01",
+      "endDate": "2022-08-01",
       "summary": "",
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "name": "Kaiser Wilhelm Institute for Physics",
-      "position": "Director",
-      "location": "Berlin, Germany",
-      "startDate": "1917-01-01",
-      "endDate": "1933-01-01",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "name": "Karl-Ferdinand University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Prague, Czechoslovakia",
-      "startDate": "1911-01-01",
-      "endDate": "1917-01-01",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "name": "University of Zurich",
-      "position": "Associate Professor of Theoretical Physics",
-      "location": "Zurich, Switzerland",
-      "startDate": "1909-01-01",
-      "endDate": "1911-01-01",
-      "summary": "",
-      "highlights": []
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "highlights": [
+        "Engineered end-to-end ML training pipeline integrating Random Forest and Logistic Regression for material classification on large-scale tabular data, achieving 87.3% accuracy; applied TF-IDF vectorization and NLP preprocessing via NLTK and scikit-learn.",
+        "Designed PostgreSQL schema with B-tree and composite indexes on high-cardinality video metadata fields, achieving a 15× latency reduction (30 min → 2 min)."
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Physics",
-      "studyType": "PhD",
-      "startDate": "1900-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
-      "courses": ["Theory of Relativity"],
-      "highlights": ["Description 1.", "Description 2."]
+      "institution": "Northeastern University",
+      "location": "Seattle, Washington",
+      "url": "https://www.northeastern.edu/",
+      "area": "Computer Science",
+      "studyType": "Master of Science",
+      "startDate": "2025-09-01",
+      "endDate": "2027-05-01",
+      "score": "4.0/4.0",
+      "courses": ["Machine Learning Systems", "Deep Learning Networks"],
+      "highlights": []
     },
     {
-      "institution": "Eidgenössische Technische Hochschule",
-      "location": "Zurich, Switzerland",
-      "area": "Physics",
-      "studyType": "Federal teaching diploma",
-      "startDate": "1896-01-01",
-      "endDate": "1900-01-01",
-      "score": "",
-      "courses": [],
-      "highlights": ["Description 1.", "Description 2."]
+      "institution": "Southern University of Science and Technology",
+      "location": "Shenzhen, Guangdong",
+      "url": "https://www.sustech.edu.cn/",
+      "area": "Applied Mathematics",
+      "studyType": "Bachelor of Science",
+      "startDate": "2021-08-01",
+      "endDate": "2025-07-01",
+      "score": "3.53/4.0",
+      "courses": ["Linear Algebra", "Statistics", "Probability Theory"],
+      "highlights": []
     }
   ],
-  "awards": [
+  "projects": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "name": "AI-Powered Job Search Agent with Ollama",
+      "summary": "Developed autonomous job search agent using Ollama with Llama 3.2 model running locally, implementing RAG architecture with ChromaDB vector store for personalized job matching.",
+      "highlights": [
+        "Engineered multi-agent system for resume tailoring, cover letter generation, and application tracking using LangChain and Python, reducing application preparation time from 2 hours to 15 minutes per job.",
+        "Built web scraping pipeline using Selenium and BeautifulSoup to aggregate job postings, integrated with SQLite database and Celery task queue, collecting 2K+ daily job listings."
+      ],
+      "startDate": "2026-01-01",
+      "endDate": ""
     },
     {
-      "title": "Max Planck Medal",
-      "date": "2029-01-01",
-      "awarder": "German Physical Society",
-      "summary": ""
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-location-dot"
+      "name": "Astronomical Image Classifier: ViT Fine-Tuning & LLM Agent",
+      "summary": "Fine-tuned a Vision Transformer (ViT) for multi-class astronomical image classification using LoRA on a remote GPU server via SSH, achieving 90.4% accuracy while reducing trainable parameters by over 90%.",
+      "highlights": [
+        "Built a supervised few-shot learning corpus of 500+ prompt-completion pairs with interpolation curve ground-truth labels via a prompt engineering pipeline.",
+        "Benchmarked against LeNet-5 trained on MNIST (60K images, 80.3% accuracy) as baseline."
+      ],
+      "startDate": "2025-02-01",
+      "endDate": "2025-05-01"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-tag"
+      "name": "Cloud-Native Microservices for Distributed System",
+      "summary": "Architected cloud-native microservices on AWS ECS with Docker containerization, Application Load Balancer for traffic routing, and auto-scaling policies.",
+      "highlights": [
+        "Integrated RabbitMQ message queues with Apache Commons Pool for connection pooling, implementing manual acknowledgements and retry logic to ensure reliable asynchronous processing."
+      ],
+      "startDate": "2025-09-01",
+      "endDate": "2025-12-01"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-envelope"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrodynamik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "SpringBoot FullStack Book Management Web Application",
+      "summary": "Architected full-stack application using React 19 with TypeScript and Tailwind CSS for the frontend, Spring Boot with PostgreSQL for the backend.",
+      "highlights": [
+        "Developed RESTful APIs with Spring MVC supporting full CRUD operations, including multipart file uploads for book covers with client-side image preview using the FileReader API."
+      ],
+      "startDate": "2025-11-01",
+      "endDate": "2025-12-01"
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "name": "Programming Languages",
+      "level": "Proficient",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Python", "Java", "C/C++", "JavaScript", "TypeScript", "PostgreSQL", "MongoDB", "R", "MATLAB", "LaTeX"]
+    },
+    {
+      "name": "ML & AI Frameworks",
+      "level": "Proficient",
+      "icon": "fa-solid fa-brain",
+      "keywords": ["PyTorch", "TensorFlow", "scikit-learn", "LangChain", "HuggingFace", "Pandas", "NumPy", "Matplotlib"]
+    },
+    {
+      "name": "Developer Tools & Cloud",
+      "level": "Proficient",
+      "icon": "fa-solid fa-server",
+      "keywords": ["Docker", "Kubernetes", "AWS ECS", "RabbitMQ", "Git", "Spring Boot", "React", "Node.js"]
     }
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker",
       "icon": ""
     },
@@ -185,37 +141,30 @@
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Research Interests",
+      "icon": "fa-solid fa-microscope",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Reinforcement Learning",
+        "Multi-Armed Bandits",
+        "LLM Agents",
+        "Vision-Language Models",
+        "ML Systems"
       ]
     }
   ],
-  "references": [
+  "certificates": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
+      "name": "ICLR 2026 Publication",
+      "date": "2026-01-01",
+      "issuer": "International Conference on Learning Representations",
+      "icon": "fa-solid fa-file-alt"
     },
     {
-      "name": "Professor Jane Smith",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
+      "name": "arXiv Preprint",
+      "date": "2025-12-01",
+      "issuer": "arXiv:2512.21925",
+      "icon": "fa-solid fa-scroll"
     }
   ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01"
-    }
-  ]
+  "volunteer": []
 }
