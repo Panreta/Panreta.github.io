@@ -58,15 +58,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-",
+            },{id: "post-quot-anti-intuitive-quot-high-dimension-geometry",
         
-          title: "",
+          title: "&quot;Anti-intuitive&quot; High Dimension Geometry",
         
-        description: "",
+        description: "Explain why the weight of high-dimension ball is distributed mainly on the shell and vectors are nearly mutually orthogonal.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/2026-03-08-HiDimGeo/";
+            window.location.href = "/blog/2026/HiDimGeo/";
           
         },
       },{id: "post-a-post-with-plotly-js",
