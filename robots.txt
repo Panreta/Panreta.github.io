@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://TingyuZhang.github.io/sitemap.xml
+Sitemap: https://panreta.github.io/sitemap.xml
