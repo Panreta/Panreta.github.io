@@ -16,4 +16,4 @@ Strategy 1: For each person, if it is your first time to go out when you find th
 
 Problem: When the bulb is initially turned on, the programmer will accecidently count one more person.
 
-How to solve: For each person, if it is your first two time to go out when you find the bulb is off, turn it on. When the programmer releases, he will turn it off and set a counter plus one. Then when the counter reaches 198, no matter the bulb was turn on or off initially, everyone has been released at least once(99*2 or 98*2+1+1,1 for 1 person came out and 1 for bulb was on at first)
+How to solve: For each person, if it is your first two time to go out when you find the bulb is off, turn it on. When the programmer releases, he will turn it off and set a counter plus one. Then when the counter reaches 198, no matter the bulb was turn on or off initially, everyone has been released at least once(99\*2 or 98\*2+1+1,1 for 1 person came out and 1 for bulb was on at first).
