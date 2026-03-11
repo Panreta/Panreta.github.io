@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Programmer in Imprisonment Problem'
-date: 2026-03-011 10:44
+date: 2026-03-11 10:44
 description: "A thought for a logical problem"
 tags: [Programming Logic Distributed_System]
 categories: Programming
