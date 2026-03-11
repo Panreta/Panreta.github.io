@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-quot-anti-intuitive-quot-high-dimension-geometry",
+        },{id: "post-programmer-in-imprisonment-problem",
+        
+          title: "Programmer in Imprisonment Problem",
+        
+        description: "A thought for a logical problem",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/programmer_imprisonment_problem/";
+          
+        },
+      },{id: "post-quot-anti-intuitive-quot-high-dimension-geometry",
         
           title: "&quot;Anti-intuitive&quot; High Dimension Geometry",
         
