@@ -3,7 +3,7 @@ layout: post
 title: 'Programmer in Imprisonment Problem'
 date: 2026-03-11 10:44
 description: "A thought for a logical problem"
-tags: [Programming Logic Distributed_System]
+tags: [Programming,Logic,Distributed System]
 categories: Programming
 tabs: true
 ---
