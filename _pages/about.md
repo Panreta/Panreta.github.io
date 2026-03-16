@@ -13,7 +13,7 @@ profile:
       <p>
       <a href="https://www.linkedin.com/in/tingyu-zhang-424065388/" target="_blank" style="display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#0077B5;">
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="16" height="16" style="filter: invert(29%) sepia(98%) saturate(1234%) hue-rotate(182deg) brightness(96%) contrast(101%);">
-        Tingyu Zhang
+    
       </a>
     </p>
 
