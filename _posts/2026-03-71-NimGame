@@ -1,3 +1,13 @@
+---
+layout: post
+title: 'Nim Problem'
+date: 2026-03-17 12:59
+description: "A thought for Leecode problem"
+tags: [Programming,Game Theory]
+categories: Programming
+tabs: true
+---
+
 I saw a problem today:
 You are playing the following Nim Game with your friend:
 
