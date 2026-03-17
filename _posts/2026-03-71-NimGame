@@ -1,0 +1,41 @@
+I saw a problem today:
+You are playing the following Nim Game with your friend:
+
+Initially, there is a heap of stones on the table.
+You and your friend will alternate taking turns, and you go first.
+On each turn, the person whose turn it is will remove 1 to 3 stones from the heap.
+The one who removes the last stone is the winner.
+Given n, the number of stones in the heap, return true if you can win the game assuming both you and your friend play optimally, otherwise return false.
+
+The solution is quite easy : n%4 == 0, you lose no matter what you do, otherwise you win.
+
+Why?
+
+Consider A and B, A is you and B is your friend. n is the number of stones in the heap. And WLOG, A starts first.
+
+
+For n = 1,2,3, you win.
+
+For n = 4, these are the possible outcomes:
+
+1. You remove 1 stone. Your friend removes 3 stones, including the last stone. Your friend wins.
+
+2. You remove 2 stones. Your friend removes 2 stones, including the last stone. Your friend wins.
+
+3. You remove 3 stones. Your friend removes the last stone. Your friend wins.
+
+In all outcomes, your friend wins.
+
+For n = 5,6,7; since 5 - 1 == 6 - 2 == 7 - 3 == 4, you can leave 4 to B. Based on our former proof, B loses, you win.
+
+For n = 8, you can only get 8 - 1 = 7, 8 - 2 = 6, 8 - 3 = 5, which is giving the winning situation to B, based on our former proof.
+
+For $\forall$ n, if n % 4 $\in$ {1,2,3}, you can win by giving B n s.t. n % 4 == 0; since B can only retrieve 1 to 3 stones, so next
+
+time you still get n % 4 $\in$ {1,2,3}, then conduct the whole strategy recurrsively.
+
+For n % 4 == 0, B can conduct the strategy to win.
+
+
+
+
