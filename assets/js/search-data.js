@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-programmer-in-imprisonment-problem",
+        },{id: "post-nim-problem",
+        
+          title: "Nim Problem",
+        
+        description: "A thought for Leecode problem",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/NimGame/";
+          
+        },
+      },{id: "post-programmer-in-imprisonment-problem",
         
           title: "Programmer in Imprisonment Problem",
         
