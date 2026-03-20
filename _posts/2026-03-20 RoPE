@@ -1,0 +1,88 @@
+---
+layout: post
+title: How to understand RoPE
+date: 2026-03-20 16:03:00
+description: Today I fully understand every part of RoRE, so I wanna generate a note to record.
+tags: AI
+categories: [Algorithm,Mathematics]
+chart:
+  plotly: true
+---
+Firstly, the method in blog is originally by Jianlin Su in his paper and blog: https://spaces.ac.cn/archives/8265/comment-page-4#comments
+
+# How to understand RoPE
+
+
+Firstly, this method is proposed to solve the relative position embedding problem, more specifically, consider setting the m,n position information onto query and key:
+
+$$\begin{cases} \tilde{q}_m = f(q, m),\\ \tilde{k}_n = f(k, n). \end{cases}$$
+
+Here $f$ is the embedding function. And we want no shift is the original element, which is the boundary case: $f(q, 0) = q,\ f(k, 0) = k.$
+
+Intuitively, we want the embedding keeps the property the similarity has the relation with the relative position, which is $m - n$:
+
+$$\langle f(q, m), f(k, n) \rangle = g(q, k, m - n.)$$
+
+Here $g$ is only an abstract function defined to consider the relative position, and we will find the structure of this.
+
+---
+
+## Solving Path
+
+Firstly, consider $q, k \in \mathbb{C}$ or $\mathbb{R}^2$ distinguished only by the context. Obviously, $\langle q, k \rangle = \operatorname{Re}(qk^*).$
+
+So the former equation becomes:
+
+$$g(q, k, m - n) = \operatorname{Re}(f(q, m) f^*(k, n)).$$
+
+Since it is complex numbers, we can always use length and angle to represent:
+
+$$\begin{cases} f(*, n) = R_f(*, n)\, e^{\hat{i}\, \Theta_f(*, m)},\\ g(q, k, m - n) = R_g(q, k, m-n)\, e^{\hat{i}\, \Theta_g(q, k, m-n)}. \end{cases}$$
+
+Take into (3) get:
+
+$$\begin{cases} R_f(q, m)\, R_f(k, n) = R_g(q, k, m - n),\\ \Theta_f(q, m) - \Theta_f(k, n) = \Theta_g(q, k, m - n). \end{cases}$$
+
+By the boundary condition, when $m = n$,
+
+$$R_f(q, m)\, R_f(k, m) = R_g(q, k, 0) = R_f(q, 0)\, R_f(k, 0) = \|q\|\,\|k\|.$$
+
+We can set:
+
+$$R_f(*, m) = \|{*}\|.$$
+
+For the second equation:
+
+$$\Theta_f(q, m) - \Theta_f(k, m) = \Theta_g(q, k, 0) = \Theta_f(q, 0) - \Theta_f(k, 0) = \Theta(q) - \Theta(k),$$
+
+where the result shows the difference of angle won't change no matter we consider the position or not. $\Theta$ here represents the angle of $q$ and $k$.
+
+And fix the last equation:
+
+$$\Theta_f(q, m) - \Theta(q) = \Theta_f(k, m) - \Theta(k) := \varphi(m).$$
+
+Since the difference won't change by vector.
+
+Notice:
+
+$$\varphi(m) - \varphi(m-1) = \Theta_f(q, m) - \Theta(q) - \Theta_f(k, m-1) + \Theta(k) = \Theta_g(q, k, 1) + \Theta(k) - \Theta(q) := \theta.$$
+
+Since $\varphi(0) = \Theta_f(q, 0) - \Theta(q) = \Theta(q) - \Theta(q) = 0 \Rightarrow \varphi(m) = m\theta$.
+
+$$\Theta_f(*, n) = m\theta + \Theta(*).$$
+
+Now we get two parts of the complex number.
+
+---
+
+## Embedding Form
+
+To conclude:
+
+$$f(q, m) = \|q\|\, e^{\hat{i}(\Theta(q) + m\theta)} = q\, e^{\hat{i} m\theta} \rightarrow \begin{pmatrix} \cos(m\theta) & -\sin(m\theta)\\ \sin(m\theta) & \cos(m\theta) \end{pmatrix} \begin{pmatrix} \operatorname{Re}(q)\\ \operatorname{Im}(q) \end{pmatrix},$$
+
+Tricky thing is, $\theta = \Theta_g(q, k, 1) + \Theta(k) - \Theta(q),$ but $g$ is still an abstract-defined function. So $\theta$ is chosen from another way: $\theta_i = \dfrac{1}{10000^{-\frac{2(i-1)}{d}}},\ i \in \left[\dfrac{d}{2}\right]$, $\operatorname{token} \in \mathbb{R}^d$.
+
+The whole structure mathematically is just rotating the vector by $\theta$ in complex space, but the result it can get is remarkable.
+
+
