@@ -24,7 +24,7 @@ $$\langle f(q, m), f(k, n) \rangle = g(q, k, m - n.)$$
 
 Here $g$ is only an abstract function defined to consider the relative position, and we will find the structure of this.
 
----
+
 
 ## Solving Path
 
@@ -72,7 +72,7 @@ $$\Theta_f(*, n) = m\theta + \Theta(*).$$
 
 Now we get two parts of the complex number.
 
----
+
 
 ## Embedding Form
 
