@@ -1,12 +1,11 @@
 ---
 layout: post
-title: How to understand RoPE
-date: 2026-03-20 16:03:00
-description: Today I fully understand every part of RoRE, so I wanna generate a note to record.
-tags: AI
-categories: [Algorithm,Mathematics]
-chart:
-  plotly: true
+title: "How to understand RoPE"
+date: 2026-03-20 16:03
+description: "Today I fully understand every part of RoRE, so I wanna generate a note to record."
+tags: [AI,Algorithm,Mathematics]
+categories: AI
+
 ---
 Firstly, the method in blog is originally by Jianlin Su in his paper and blog: https://spaces.ac.cn/archives/8265/comment-page-4#comments
 
