@@ -2,15 +2,12 @@
 layout: post
 title: "How to understand RoPE"
 date: 2026-03-20 16:03
-description: "Today I fully understand every part of RoRE, so I wanna generate a note to record."
+description: "Today I fully understand every part of RoPE, so I wanna generate a note to record."
 tags: [AI,Algorithm,Mathematics]
 categories: AI
-
 ---
-Firstly, the method in blog is originally by Jianlin Su in his paper and blog: https://spaces.ac.cn/archives/8265/comment-page-4#comments
 
-# How to understand RoPE
-
+Firstly, the method in this blog is originally by Jianlin Su in his paper and blog: https://spaces.ac.cn/archives/8265/comment-page-4#comments
 
 Firstly, this method is proposed to solve the relative position embedding problem, more specifically, consider setting the m,n position information onto query and key:
 
@@ -23,8 +20,6 @@ Intuitively, we want the embedding keeps the property the similarity has the rel
 $$\langle f(q, m), f(k, n) \rangle = g(q, k, m - n.)$$
 
 Here $g$ is only an abstract function defined to consider the relative position, and we will find the structure of this.
-
-
 
 ## Solving Path
 
@@ -72,8 +67,6 @@ $$\Theta_f(*, n) = m\theta + \Theta(*).$$
 
 Now we get two parts of the complex number.
 
-
-
 ## Embedding Form
 
 To conclude:
@@ -83,5 +76,3 @@ $$f(q, m) = \|q\|\, e^{\hat{i}(\Theta(q) + m\theta)} = q\, e^{\hat{i} m\theta} \
 Tricky thing is, $\theta = \Theta_g(q, k, 1) + \Theta(k) - \Theta(q),$ but $g$ is still an abstract-defined function. So $\theta$ is chosen from another way: $\theta_i = \dfrac{1}{10000^{-\frac{2(i-1)}{d}}},\ i \in \left[\dfrac{d}{2}\right]$, $\operatorname{token} \in \mathbb{R}^d$.
 
 The whole structure mathematically is just rotating the vector by $\theta$ in complex space, but the result it can get is remarkable.
-
-
