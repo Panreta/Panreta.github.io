@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-nim-problem",
+        },{id: "post-how-to-understand-rope",
+        
+          title: "How to understand RoPE",
+        
+        description: "Today I fully understand every part of RoPE, so I wanna generate a note to record.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/RoPE/";
+          
+        },
+      },{id: "post-nim-problem",
         
           title: "Nim Problem",
         
