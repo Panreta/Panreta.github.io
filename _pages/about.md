@@ -16,6 +16,8 @@ profile:
            </a>
           <a href="/assets/img/Wechat.jpg" target="_blank" style="display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:#07C160;">
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/wechat.svg" width="16" height="16" style="filter: invert(39%) sepia(98%) saturate(400%) hue-rotate(100deg) brightness(96%) contrast(101%);">
+         </a>
+    </p>
         <p>
       📧 j74638239@gmail.com<br>
       📧 tingyu.z@northeastern.edu
