@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-how-to-understand-rope",
+        },{id: "post-dynamic-programming-and-differential-equation",
+        
+          title: "Dynamic Programming and Differential Equation",
+        
+        description: "My blog about DP.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/DP/";
+          
+        },
+      },{id: "post-how-to-understand-rope",
         
           title: "How to understand RoPE",
         
