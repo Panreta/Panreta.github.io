@@ -42,10 +42,9 @@ To be frank, I definitely know what the Bradley-Terry model is based on my,low-k
 
 Each item $i$ has a latent skill $\theta_i \in \mathbb{R}$. The Bradley-Terry model says the probability item $i$ beats item $j$ is
 
-$$P(i \succ j) = \frac{e^{\theta_i}}{e^{\theta_i}+e^{\theta_j}} = \sigma(\theta_i - \theta_j)$$
+$$P(i \succ j) = \frac{e^{\theta_i}}{e^{\theta_i}+e^{\theta_j}} = \sigma(\theta_i - \theta_j).$$
 
 where $\sigma$ is the logistic sigmoid. Only the *difference* $\theta_i - \theta_j$ matters, so $\theta$ is identifiable only up to a global shift - fix one item's $\theta$ at 0 to remove that extra degree of freedom.
-
 
 
 ## Fitting it: log-likelihood and gradient
@@ -54,7 +53,7 @@ Given comparisons $\mathcal{D} = \{(w_k, l_k)\}_{k=1}^K$ (winner, loser):
 
 $$\ell(\theta) = \sum_{k=1}^{K} \log \sigma(\theta_{w_k} - \theta_{l_k})$$
 
-$$\frac{\partial \ell}{\partial \theta_i} = \sum_{k:\,w_k=i}\big(1-\sigma(\theta_{w_k}-\theta_{l_k})\big) \;-\; \sum_{k:\,l_k=i}\big(1-\sigma(\theta_{w_k}-\theta_{l_k})\big)$$
+$$\frac{\partial \ell}{\partial \theta_i} = \sum_{k: w_k=i}\left(1-\sigma(\theta_{w_k}-\theta_{l_k})\right) - \sum_{k: l_k=i}\left(1-\sigma(\theta_{w_k}-\theta_{l_k})\right)$$
 
 Each comparison's residual - "how surprised the model is that the winner won" - gets added to the winner and subtracted from the loser. MLE is just L-BFGS on the negative of this.
 
@@ -62,7 +61,7 @@ Each comparison's residual - "how surprised the model is that the winner won" - 
 
 Swap the per-item skill $\theta_i$ for a network $r_\theta(x,y)$ scoring a completion $y$ given prompt $x$. For a preferred/dispreferred pair $(y_w, y_l)$:
 
-$$\mathcal{L}_{RM}(\theta) = -\,\mathbb{E}_{(x,y_w,y_l)\sim\mathcal{D}}\Big[\log\sigma\big(r_\theta(x,y_w)-r_\theta(x,y_l)\big)\Big]$$
+$$\mathcal{L}_{RM}(\theta) = -\mathbb{E}_{(x,y_w,y_l)\sim\mathcal{D}}\left[\log\sigma\left(r_\theta(x,y_w)-r_\theta(x,y_l)\right)\right]$$
 
 Same loss, same derivation - $r_\theta$ is just a learned stand-in for the per-item skill lookup.
 
@@ -72,15 +71,16 @@ Human preference labels aren't clean, so the plain loss above needs correcting. 
 
 **Per-annotator inverse-temperature $\beta_a$** (needs annotator IDs) - this is Thurstone's 1927 Case V: each annotator has their own noise *scale* inside the same Gumbel model, so their comparisons follow
 
-$$P_a(y_w \succ y_l) = \sigma\big(\beta_a(r_\theta(x,y_w)-r_\theta(x,y_l))\big)$$
+$$P_a(y_w \succ y_l) = \sigma\left(\beta_a(r_\theta(x,y_w)-r_\theta(x,y_l))\right)$$
 
 $\beta_a \to \infty$ is a noiseless annotator, $\beta_a \to 0$ is pure guessing.
 
 **Global label-flip rate $\epsilon$** (no IDs needed) - assume a flat fraction of labels are just flipped after the fact:
 
-$$P_{obs}(y=1) = (1-\epsilon)\sigma(\Delta) + \epsilon\,\sigma(-\Delta)$$
+$$P_{obs}(y=1) = (1-\epsilon)\sigma(\Delta) + \epsilon\sigma(-\Delta)$$
 
 Fitting the *uncorrected* sigmoid to noisy labels is provably biased - as $\Delta \to \infty$ the true model saturates at $1-\epsilon$, and an uncorrected sigmoid can only match that by shrinking every estimated gap toward zero.
+
 
 ## Code
 
