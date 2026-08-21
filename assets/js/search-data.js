@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-dynamic-programming-and-differential-equation",
+        },{id: "post-the-bradley-terry-model",
+        
+          title: "The Bradley-Terry Model",
+        
+        description: "From pairwise comparisons to RLHF reward models",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Bradley-Terry/";
+          
+        },
+      },{id: "post-dynamic-programming-and-differential-equation",
         
           title: "Dynamic Programming and Differential Equation",
         
