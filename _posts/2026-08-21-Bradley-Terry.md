@@ -33,6 +33,8 @@ Regularizing RM training
 
 * Constrain the RM's information bottleneck, forcing it to discard non-semantic features like word count and punctuation. InfoRM does this by introducing a "bottleneck layer" into the model, requiring it to use as little information as possible when predicting a score while keeping prediction accuracy as high as possible. Since punctuation, formatting, length, etc. contribute only weakly to response quality, they get filtered out first.
 
+---
+
 # 2.What's Bradley-Terry model and how to implement it out by Python? Also, how your function solve the problem of noise annotator?
 To be frank, I definitely know what the Bradley-Terry model is based on my,low-key, strong machine learning and reinforcement learning background. But if you didn't tell me, I'm gonna get RL problems instead of C, and I have no time to review, that's not fair.
 
@@ -44,17 +46,7 @@ $$P(i \succ j) = \frac{e^{\theta_i}}{e^{\theta_i}+e^{\theta_j}} = \sigma(\theta_
 
 where $\sigma$ is the logistic sigmoid. Only the *difference* $\theta_i - \theta_j$ matters, so $\theta$ is identifiable only up to a global shift - fix one item's $\theta$ at 0 to remove that extra degree of freedom.
 
-## Why sigmoid, though?
 
-This isn't an arbitrary squashing function glued on. Assume a random-utility model (McFadden, 1974): each item's utility is its true skill plus i.i.d. Gumbel noise,
-
-$$U_i = \theta_i + G_i, \qquad G_i \sim \text{Gumbel}(0,1)$$
-
-and the winner is whichever $U$ is larger. The classical fact that makes this work: the difference of two i.i.d. standard Gumbels is a standard Logistic random variable, whose CDF is exactly $\sigma$. So
-
-$$P(U_i > U_j) = P(G_i - G_j > \theta_j - \theta_i) = \sigma(\theta_i - \theta_j)$$
-
-The sigmoid is the CDF of the noise difference - same root as the Nim proof pattern, really: don't take the formula on faith, trace it back to what generates it.
 
 ## Fitting it: log-likelihood and gradient
 
