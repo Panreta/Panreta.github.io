@@ -11,6 +11,8 @@ I got an interview that wanted me to write Leetcode-style problems in C language
 
 # 1. What's reward hacking and how to solve it?
 
+Reward hacking: the policy model finds regions where the reward model is wrong (blind spots, spurious correlations) and exploits them to get a high score without actual quality improving. It's Goodhart's Law in action — once the RM's score becomes the optimization target, it stops being a valid measure of what you actually wanted.
+
 Specific Problems:
 
 * **Length bias**: for example, because the reward model scores longer responses higher, the policy model tends to generate longer answers — but the reasoning quality isn't necessarily better.
