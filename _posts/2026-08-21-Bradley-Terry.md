@@ -7,7 +7,32 @@ tags: [Machine Learning, Reinforcement Learning,Artificial Intelligence]
 categories: Machine Learning
 tabs: true
 ---
-I ran into the Bradley-Terry model while reading about how reward models are trained for RLHF, and it turns out the whole thing - the sigmoid, the log-likelihood, even the "why does it look like logistic regression" feeling - falls out of one clean assumption. Writing it down here.
+I got an interview that wanted me to write Leetcode-style problems in C language. After three days of hard work, They just asked me two RL problems. What can I say? Maybe just record them.
+
+# 1. What's reward hacking and how to solve it?
+
+Specific Problems:
+
+* **Length bias**: for example, because the reward model scores longer responses higher, the policy model tends to generate longer answers — but the reasoning quality isn't necessarily better.
+* **Format bias**: for example, the reward model prefers responses with markdown formatting, causing the policy model to favor generating markdown-formatted answers.
+* **Out-of-distribution bias**: since the reward model's training data only covers 50% of the data distribution, when serving encounters the other 50% of scenarios, the RM's predictions become random or extreme — for instance, the model discovers that gibberish gets an extremely high score from the reward model, causing the policy model to start producing nonsense.
+
+Solution:
+
+* **Length alignment**: align the length of positive and negative examples, or add a length penalty.
+* **Format alignment**: create negative examples by changing only the logic (not the formatting) of positive examples and add them to reward model training, forcing the model to focus on the response's logic rather than its formatting.
+
+Fix the model:
+Uncertainty estimation (filtering out low-confidence predictions)
+
+* Have the RM output not just a score but also a "confidence" value. If, during RL, a given trajectory's RM confidence turns out to be extremely low (possibly a reward-hacking path), reduce its reward accordingly.
+
+Regularizing RM training
+
+* Constrain the RM's information bottleneck, forcing it to discard non-semantic features like word count and punctuation. InfoRM does this by introducing a "bottleneck layer" into the model, requiring it to use as little information as possible when predicting a score while keeping prediction accuracy as high as possible. Since punctuation, formatting, length, etc. contribute only weakly to response quality, they get filtered out first.
+
+# 2.What's Bradley-Terry model and how to implement it out by Python? Also, how your function solve the problem of noise annotator?
+To be frank, I definitely know what the Bradley-Terry model is based on my,low-key, strong machine learning and reinforcement learning background. But if you didn't tell me, I'm gonna get RL problems instead of C, and I have no time to review, that's not fair.
 
 ## The setup
 
