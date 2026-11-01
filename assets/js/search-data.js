@@ -37,11 +37,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-kldivergence",
+        },{id: "post-kl-divergence-and-entropy",
         
-          title: "Kldivergence",
+          title: "KL-Divergence and Entropy",
         
-        description: "",
+        description: "The origin of care divergence and why it has such property.",
         section: "Posts",
         handler: () => {
           
