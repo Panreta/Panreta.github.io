@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-the-bradley-terry-model",
+        },{id: "post-kldivergence",
+        
+          title: "Kldivergence",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/KLDivergence/";
+          
+        },
+      },{id: "post-the-bradley-terry-model",
         
           title: "The Bradley-Terry Model",
         
