@@ -28,7 +28,7 @@ This is the KL divergence.
 Since when p is fixed, you don't have to consider constant in the optimization.
 
 $$
-B_\varphi(p, q) = - \sum_i p_i \log q_i
+Cross-Entropy(p, q) = - \sum_i p_i \log q_i
 .\;
 $$
 
