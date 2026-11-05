@@ -40,30 +40,26 @@ To be frank, I definitely know what the Bradley-Terry model is based on my,low-k
 
 ## The setup
 
-Each item $i$ has a latent skill $\theta_i \in \mathbb{R}$. The Bradley-Terry model says the probability item $i$ beats item $j$ is
+For reward model $r_{\theta}(x,y)$,(x,y) is the (state,result), for llm state is the prompt. $\theta$ is the model parameter.
 
-$$P(i \succ j) = \frac{e^{\theta_i}}{e^{\theta_i}+e^{\theta_j}} = \sigma(\theta_i - \theta_j).$$
+For the answer with preference $y_w$ outstanding from $y_l$, we write it mathematically:
 
-where $\sigma$ is the logistic sigmoid. Only the *difference* $\theta_i - \theta_j$ matters, so $\theta$ is identifiable only up to a global shift - fix one item's $\theta$ at 0 to remove that extra degree of freedom.
+$$P(y_w \succ y_l|x) = \frac{e^{r_{\theta}(x,y_w)}}{e^{r_{\theta}(x,y_w)}+e^{r_{\theta}(x,y_l)}}.$$
+
+With a dataset of $N$ comparisons $\mathcal{D} = \{(x^{(i)}, y_w^{(i)}, y_l^{(i)})\}_{i=1}^{N}$, where $y_w$ is the preferred (winning) response and $y_l$ the losing one:
+
+$$
+\begin{aligned}
+l(\theta|x) &= -\sum_{i=1}^{N} \ln \frac{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big)}{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big) + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)})\big)} \\[4pt]
+&= -\sum_{i=1}^{N} \ln \frac{1}{1 + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)}) - r_{\theta}(x^{(i)}, y_w^{(i)})\big)} \\[4pt]
+&= -\sum_{i=1}^{N} \ln \sigma\big(r_{\theta}(x^{(i)}, y_w^{(i)}) - r_{\theta}(x^{(i)}, y_l^{(i)})\big),
+\end{aligned}
+$$
+
+where $\sigma(.)$ is the sigmoid function.
 
 
-## Fitting it: log-likelihood and gradient
 
-Given comparisons $\mathcal{D} = \{(w_k, l_k)\}_{k=1}^K$ (winner, loser):
-
-$$\ell(\theta) = \sum_{k=1}^{K} \log \sigma(\theta_{w_k} - \theta_{l_k})$$
-
-$$\frac{\partial \ell}{\partial \theta_i} = \sum_{k: w_k=i}\left(1-\sigma(\theta_{w_k}-\theta_{l_k})\right) - \sum_{k: l_k=i}\left(1-\sigma(\theta_{w_k}-\theta_{l_k})\right)$$
-
-Each comparison's residual - "how surprised the model is that the winner won" - gets added to the winner and subtracted from the loser. MLE is just L-BFGS on the negative of this.
-
-## Where RLHF comes in
-
-Swap the per-item skill $\theta_i$ for a network $r_\theta(x,y)$ scoring a completion $y$ given prompt $x$. For a preferred/dispreferred pair $(y_w, y_l)$:
-
-$$\mathcal{L}_{RM}(\theta) = -\mathbb{E}_{(x,y_w,y_l)\sim\mathcal{D}}\left[\log\sigma\left(r_\theta(x,y_w)-r_\theta(x,y_l)\right)\right]$$
-
-Same loss, same derivation - $r_\theta$ is just a learned stand-in for the per-item skill lookup.
 
 ## Annotator noise
 
