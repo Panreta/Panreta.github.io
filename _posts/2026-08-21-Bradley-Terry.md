@@ -51,8 +51,8 @@ With a dataset of $N$ comparisons $\mathcal{D} = \{(x^{(i)}, y_w^{(i)}, y_l^{(i)
 
 $$
 \begin{aligned}
-l(\theta|x) &= -\sum_{i=1}^{N} \ln \frac{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big)}{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big) + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)})\big)} \\[4pt]
-&= -\sum_{i=1}^{N} \ln \frac{1}{1 + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)}) - r_{\theta}(x^{(i)}, y_w^{(i)})\big)} \\[4pt]
+l(\theta|x) &= -\sum_{i=1}^{N} \ln \frac{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big)}{\exp\big(r_{\theta}(x^{(i)}, y_w^{(i)})\big) + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)})\big)} \\
+&= -\sum_{i=1}^{N} \ln \frac{1}{1 + \exp\big(r_{\theta}(x^{(i)}, y_l^{(i)}) - r_{\theta}(x^{(i)}, y_w^{(i)})\big)} \\
 &= -\sum_{i=1}^{N} \ln \sigma\big(r_{\theta}(x^{(i)}, y_w^{(i)}) - r_{\theta}(x^{(i)}, y_l^{(i)})\big),
 \end{aligned}
 $$
