@@ -3,8 +3,9 @@ layout: post
 title: 'The Bradley-Terry Model'
 date: 2026-08-21 12:00
 description: "From pairwise comparisons to RLHF reward models"
-tags: [Machine Learning, Reinforcement Learning,Artificial Intelligence]
-categories: Machine Learning
+tags: [Machine Learning, Reinforcement Learning, Artificial Intelligence]
+categories: [Machine Learning]
+math: true
 tabs: true
 ---
 I got an interview that wanted me to write Leetcode-style problems in C language. After three days of hard work, They just asked me two RL problems. What can I say? Maybe just record them.
