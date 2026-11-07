@@ -227,13 +227,19 @@ The finished MP3s are in `~/rusty-lake-music/music/`.
 
 ---
 
-## Troubleshooting
+# The Mr.rabbit magic show
 
-| Error | Cause | Fix |
-| --- | --- | --- |
-| `error: externally-managed-environment` | `pip` ran with Homebrew's Python, not the conda environment | Run `conda activate unity-extract`, check that `which pip` shows `.../miniconda3/envs/unity-extract/bin/pip`, then use `python -m pip install UnityPy` |
-| `Run 'conda init' before 'conda activate'` | conda isn't set up in zsh | Run `conda init zsh`, then open a new terminal |
-| `IndexError: list index out of range` at `sys.argv[1]` | The script was run without the folder path | Add the quoted data-folder path after `extract_audio.py` |
-| `Permission denied` when saving | The terminal is in `/` or another protected folder | `cd ~/rusty-lake-music` first |
-| No music files, but `.bank` files exist | The game uses FMOD, not Unity audio | This method doesn't apply; FMOD needs a different extraction tool |
-| `zsh: command not found: ffmpeg` | ffmpeg isn't installed | `brew install ffmpeg` |
+When I got to the content folder, I only found sounds.swf.
+
+Solution:JPEXS Free Flash Decompiler (FFDec)
+Drag the sounds.swf into the application then everything is done.
+
+
+
+
+
+
+
+
+
+
